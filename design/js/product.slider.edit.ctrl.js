@@ -61,24 +61,29 @@
             var domUpP1 = function (index) {
                 // give the DOM a moment to update
                 $timeout(function () {
-                    // pg = product group
+                    // pg = product group... cache jq selectors
                     var pgElem = ".product-group" + (index - 1), // pgElem is supposed to be in cadence with pgPositionTracker
                         pgSelector = angular.element(pgElem),
                         pgActive = pgSelector.hasClass('active');
                     console.log("pgElem = " + pgElem);
 
                     if (pgActive) {
-                        if (pgElem !== '.product-group2') { // '.product-group2' should never increment-left because it's last
-                            // pgPosition[1] = '.pg-group0'
-                            // pgPosition[2] = '.pg-group1'
-                            // pgPosition[3] = '.pg-group2'
-                            if (pgPositionTracker[1].side === "left") {
-                                angular.element('.product-group0').addClass('increment-left');
-                            }
-                            if (pgPositionTracker[2].side === "left") {
-                                angular.element('.product-group1').addClass('increment-left');
-                            }
+                        // pgPosition[1] = '.pg-group0'
+                        // pgPosition[2] = '.pg-group1'
+                        // pgPosition[3] = '.pg-group2'
+                        if (pgPositionTracker[1].side === "left") {
+                            angular.element('.product-group0').addClass('increment-left');
                         }
+                        // else if (pgPositionTracker[1].side === "right") {
+                        //     angular.element('.product-group0').removeClass('increment-left');
+                        // }
+
+                        if (pgPositionTracker[2].side === "left") {
+                            angular.element('.product-group1').addClass('increment-left');
+                        }
+                        // else if (pgPositionTracker[1].side === "right") {
+                        //     angular.element('.product-group1').removeClass('increment-left');
+                        // }
                     }
                 }, 10);
             };
@@ -92,15 +97,16 @@
                 switch (index) {
                     case 0:
                         pgPositionTracker[0].side = "center";
-                        if (pgPositionTracker.forEach(function (elem) {
-                                return elem.side === "center" || elem.side === "left";
-                            })) {
-                            pgPositionTracker.forEach(function (elem) {
-                                elem.side = "right";
-                            });
+                        if (pgPositionTracker[1].side === "center") {
+                            pgPositionTracker[1].side = "right";
                             removeIncrementLeft();
+                        } else if (pgPositionTracker[1].side === "center") {
+                            pgPositionTracker[1].side = "right";
+                        } else if (pgPositionTracker[2].side === "center") {
+                            pgPositionTracker[2].side = "right";
                         }
 
+                        //------------------------------
                         // Most Important part of switch
                         $scope.activeArea = -1;
                         break;
@@ -110,13 +116,13 @@
                             pgPositionTracker[0].side = "left";
                         } else if (pgPositionTracker[2].side === "center") {
                             pgPositionTracker[2].side = "right";
+                            removeIncrementLeft();
                         } else if (pgPositionTracker[3].side === "center") {
                             pgPositionTracker[3].side = "right";
-                        } else if (pgPositionTracker[2].side === "left") {
                             removeIncrementLeft();
-                            pgPositionTracker[2].side = "right";
                         }
 
+                        //------------------------------
                         // Most Important part of switch
                         $scope.activeArea = 0;
                         break;
@@ -126,11 +132,11 @@
                             pgPositionTracker[0].side = "left";
                         } else if (pgPositionTracker[1].side === "center") {
                             pgPositionTracker[1].side = "left";
-                            console.log("product-group1 is on left side");
                         } else if (pgPositionTracker[3].side === "center") {
                             pgPositionTracker[3].side = "right";
-                            removeIncrementLeft();
                         }
+
+                        //------------------------------
                         // Most Important part of switch
                         $scope.activeArea = 1;
                         break;
@@ -144,6 +150,7 @@
                             pgPositionTracker[2].side = "left";
                         }
 
+                        //------------------------------
                         // Most Important part of switch
                         $scope.activeArea = 2;
                         break;
