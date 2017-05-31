@@ -12,7 +12,8 @@
         templateUrl: 'design/js/product.card.incremented.edit.temp.html',
         bindings: {
             product: '=',
-            activeArea: '<'
+            activeArea: '<',
+            apcProdRow: '@'
         },
         controller: ['jProductGroup1Data', IncrementedProductGroupCtrl]
     });
@@ -27,6 +28,7 @@
         vm.buttonText = vm.buttonClicked ? 'Save/Cancel' : 'Edit';
 
         vm.editCard = function () {
+            console.log("vm.apcProdRow = "+vm.apcProdRow);
             vm.buttonClicked = !vm.buttonClicked;
             vm.buttonText = vm.buttonClicked ? 'Save/Cancel' : 'Edit';
             vm.showImageUrl = !vm.showImageUrl;
