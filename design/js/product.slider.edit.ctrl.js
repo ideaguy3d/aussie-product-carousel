@@ -49,6 +49,24 @@
                 {side: "right"}, // pgPosition[2] = '.pg-group1'
                 {side: "right"}  // pgPosition[3] = '.pg-group2'
             ];
+            var pgPositionTracker2 = [
+                {side: "initialState"},
+                {side: "right"}, // pgPosition[1] = '.pg-group0'
+                {side: "right"}, // pgPosition[2] = '.pg-group1'
+                {side: "right"}  // pgPosition[3] = '.pg-group2'
+            ];
+            var pgPositionTracker3 = [
+                {side: "initialState"},
+                {side: "right"}, // pgPosition[1] = '.pg-group0'
+                {side: "right"}, // pgPosition[2] = '.pg-group1'
+                {side: "right"}  // pgPosition[3] = '.pg-group2'
+            ];
+            var pgPositionTracker4 = [
+                {side: "initialState"},
+                {side: "right"}, // pgPosition[1] = '.pg-group0'
+                {side: "right"}, // pgPosition[2] = '.pg-group1'
+                {side: "right"}  // pgPosition[3] = '.pg-group2'
+            ];
 
             var indexer = 0, prodGrpArr = [], counter = 0, k;
 
@@ -58,11 +76,29 @@
                 });
             };
 
+            var removeIncrementLeft2 = function () {
+                angular.element('.apc-row2.product-group.increment-left').each(function (i) {
+                    angular.element(this).removeClass('increment-left');
+                });
+            };
+
+            var removeIncrementLeft3 = function () {
+                angular.element('.apc-row3.product-group.increment-left').each(function (i) {
+                    angular.element(this).removeClass('increment-left');
+                });
+            };
+
+            var removeIncrementLeft4 = function () {
+                angular.element('.apc-row4.product-group.increment-left').each(function (i) {
+                    angular.element(this).removeClass('increment-left');
+                });
+            };
+
             var domUpP1 = function (index) {
                 // give the DOM a moment to update
                 $timeout(function () {
                     // pg = product group... cache jq selectors
-                    var pgElem = ".product-group" + (index - 1), // pgElem is supposed to be in cadence with pgPositionTracker
+                    var pgElem = ".apc-row1.product-group" + (index - 1), // pgElem is supposed to be in cadence with pgPositionTracker
                         pgSelector = angular.element(pgElem),
                         pgActive = pgSelector.hasClass('active');
                     console.log("pgElem = " + pgElem);
@@ -72,23 +108,88 @@
                         // pgPosition[2] = '.pg-group1'
                         // pgPosition[3] = '.pg-group2'
                         if (pgPositionTracker[1].side === "left") {
-                            angular.element('.product-group0').addClass('increment-left');
+                            angular.element('.apc-row1.product-group0').addClass('increment-left');
                         }
-                        // else if (pgPositionTracker[1].side === "right") {
-                        //     angular.element('.product-group0').removeClass('increment-left');
-                        // }
 
                         if (pgPositionTracker[2].side === "left") {
-                            angular.element('.product-group1').addClass('increment-left');
+                            angular.element('.apc-row1.product-group1').addClass('increment-left');
                         }
-                        // else if (pgPositionTracker[1].side === "right") {
-                        //     angular.element('.product-group1').removeClass('increment-left');
-                        // }
                     }
                 }, 10);
             };
 
-            //-- public functions:
+            var domUp2P1 = function (index) {
+                // give the DOM a moment to update
+                $timeout(function () {
+                    // pg = product group... cache jq selectors
+                    var pgElem = ".apc-row2.product-group" + (index - 1), // pgElem is supposed to be in cadence with pgPositionTracker
+                        pgSelector = angular.element(pgElem),
+                        pgActive = pgSelector.hasClass('active');
+                    console.log("pgElem = " + pgElem);
+
+                    if (pgActive) {
+                        // pgPosition[1] = '.pg-group0'
+                        // pgPosition[2] = '.pg-group1'
+                        // pgPosition[3] = '.pg-group2'
+                        if (pgPositionTracker[1].side === "left") {
+                            angular.element('.apc-row2.product-group0').addClass('increment-left');
+                        }
+
+                        if (pgPositionTracker[2].side === "left") {
+                            angular.element('.apc-row2.product-group1').addClass('increment-left');
+                        }
+                    }
+                }, 10);
+            };
+
+            var domUp3P1 = function (index) {
+                // give the DOM a moment to update
+                $timeout(function () {
+                    // pg = product group... cache jq selectors
+                    var pgElem = ".apc-row3.product-group" + (index - 1), // pgElem is supposed to be in cadence with pgPositionTracker
+                        pgSelector = angular.element(pgElem),
+                        pgActive = pgSelector.hasClass('active');
+                    console.log("pgElem = " + pgElem);
+
+                    if (pgActive) {
+                        // pgPosition[1] = '.pg-group0'
+                        // pgPosition[2] = '.pg-group1'
+                        // pgPosition[3] = '.pg-group2'
+                        if (pgPositionTracker[1].side === "left") {
+                            angular.element('.apc-row3.product-group0').addClass('increment-left');
+                        }
+
+                        if (pgPositionTracker[2].side === "left") {
+                            angular.element('.apc-row3.product-group1').addClass('increment-left');
+                        }
+                    }
+                }, 10);
+            };
+
+            var domUp4P1 = function (index) {
+                // give the DOM a moment to update
+                $timeout(function () {
+                    // pg = product group... cache jq selectors
+                    var pgElem = ".apc-row4.product-group" + (index - 1), // pgElem is supposed to be in cadence with pgPositionTracker
+                        pgSelector = angular.element(pgElem),
+                        pgActive = pgSelector.hasClass('active');
+                    console.log("pgElem = " + pgElem);
+
+                    if (pgActive) {
+                        // pgPosition[1] = '.pg-group0'
+                        // pgPosition[2] = '.pg-group1'
+                        // pgPosition[3] = '.pg-group2'
+                        if (pgPositionTracker[1].side === "left") {
+                            angular.element('.apc-row4.product-group0').addClass('increment-left');
+                        }
+
+                        if (pgPositionTracker[2].side === "left") {
+                            angular.element('.apc-row4.product-group1').addClass('increment-left');
+                        }
+                    }
+                }, 10);
+            };
+
             $scope.apcSignout = function () {
                 Auth.$signOut();
             };
@@ -102,6 +203,7 @@
                             removeIncrementLeft();
                         } else if (pgPositionTracker[1].side === "center") {
                             pgPositionTracker[1].side = "right";
+                            removeIncrementLeft();
                         } else if (pgPositionTracker[2].side === "center") {
                             pgPositionTracker[2].side = "right";
                         }
@@ -159,6 +261,207 @@
                 domUpP1(index);
             };
 
+            $scope.updateActiveArea2 = function (index) {
+                switch (index) {
+                    case 0:
+                        pgPositionTracker2[0].side = "center";
+                        if (pgPositionTracker2[1].side === "center") {
+                            pgPositionTracker2[1].side = "right";
+                            removeIncrementLeft2();
+                        } else if (pgPositionTracker2[1].side === "center") {
+                            pgPositionTracker2[1].side = "right";
+                            removeIncrementLeft2();
+                        } else if (pgPositionTracker2[2].side === "center") {
+                            pgPositionTracker2[2].side = "right";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea2 = -1;
+                        break;
+                    case 1:
+                        pgPositionTracker2[1].side = "center";
+                        if (pgPositionTracker2[0].side === "center") {
+                            pgPositionTracker2[0].side = "left";
+                        } else if (pgPositionTracker2[2].side === "center") {
+                            pgPositionTracker2[2].side = "right";
+                            removeIncrementLeft2();
+                        } else if (pgPositionTracker2[3].side === "center") {
+                            pgPositionTracker2[3].side = "right";
+                            removeIncrementLeft2();
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea2 = 0;
+                        break;
+                    case 2:
+                        pgPositionTracker2[2].side = "center";
+                        if (pgPositionTracker2[0].side === "center") {
+                            pgPositionTracker2[0].side = "left";
+                        } else if (pgPositionTracker2[1].side === "center") {
+                            pgPositionTracker2[1].side = "left";
+                        } else if (pgPositionTracker2[3].side === "center") {
+                            pgPositionTracker2[3].side = "right";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea2 = 1;
+                        break;
+                    case 3:
+                        pgPositionTracker2[3].side = "center";
+                        if (pgPositionTracker2[0].side === "center") {
+                            pgPositionTracker2[0].side = "left";
+                        } else if (pgPositionTracker2[1].side === "center") {
+                            pgPositionTracker2[1].side = "left";
+                        } else if (pgPositionTracker2[2].side === "center") {
+                            pgPositionTracker2[2].side = "left";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea2 = 2;
+                        break;
+                }
+
+                domUp2P1(index);
+            };
+
+            $scope.updateActiveArea3 = function (index) {
+                switch (index) {
+                    case 0:
+                        pgPositionTracker3[0].side = "center";
+                        if (pgPositionTracker3[1].side === "center") {
+                            pgPositionTracker3[1].side = "right";
+                            removeIncrementLeft3();
+                        } else if (pgPositionTracker3[1].side === "center") {
+                            pgPositionTracker3[1].side = "right";
+                            removeIncrementLeft3();
+                        } else if (pgPositionTracker3[2].side === "center") {
+                            pgPositionTracker3[2].side = "right";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea3 = -1;
+                        break;
+                    case 1:
+                        pgPositionTracker3[1].side = "center";
+                        if (pgPositionTracker3[0].side === "center") {
+                            pgPositionTracker3[0].side = "left";
+                        } else if (pgPositionTracker3[2].side === "center") {
+                            pgPositionTracker3[2].side = "right";
+                            removeIncrementLeft3();
+                        } else if (pgPositionTracker3[3].side === "center") {
+                            pgPositionTracker3[3].side = "right";
+                            removeIncrementLeft3();
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea3 = 0;
+                        break;
+                    case 2:
+                        pgPositionTracker3[2].side = "center";
+                        if (pgPositionTracker3[0].side === "center") {
+                            pgPositionTracker3[0].side = "left";
+                        } else if (pgPositionTracker3[1].side === "center") {
+                            pgPositionTracker3[1].side = "left";
+                        } else if (pgPositionTracker3[3].side === "center") {
+                            pgPositionTracker3[3].side = "right";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea3 = 1;
+                        break;
+                    case 3:
+                        pgPositionTracker3[3].side = "center";
+                        if (pgPositionTracker3[0].side === "center") {
+                            pgPositionTracker3[0].side = "left";
+                        } else if (pgPositionTracker3[1].side === "center") {
+                            pgPositionTracker3[1].side = "left";
+                        } else if (pgPositionTracker3[2].side === "center") {
+                            pgPositionTracker3[2].side = "left";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea3 = 2;
+                        break;
+                }
+
+                domUp3P1(index);
+            };
+
+            $scope.updateActiveArea4 = function (index) {
+                switch (index) {
+                    case 0:
+                        pgPositionTracker4[0].side = "center";
+                        if (pgPositionTracker4[1].side === "center") {
+                            pgPositionTracker4[1].side = "right";
+                            removeIncrementLeft4();
+                        } else if (pgPositionTracker4[1].side === "center") {
+                            pgPositionTracker4[1].side = "right";
+                            removeIncrementLeft4();
+                        } else if (pgPositionTracker4[2].side === "center") {
+                            pgPositionTracker4[2].side = "right";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea4 = -1;
+                        break;
+                    case 1:
+                        pgPositionTracker4[1].side = "center";
+                        if (pgPositionTracker4[0].side === "center") {
+                            pgPositionTracker4[0].side = "left";
+                        } else if (pgPositionTracker4[2].side === "center") {
+                            pgPositionTracker4[2].side = "right";
+                            removeIncrementLeft4();
+                        } else if (pgPositionTracker4[3].side === "center") {
+                            pgPositionTracker4[3].side = "right";
+                            removeIncrementLeft4();
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea4 = 0;
+                        break;
+                    case 2:
+                        pgPositionTracker4[2].side = "center";
+                        if (pgPositionTracker4[0].side === "center") {
+                            pgPositionTracker4[0].side = "left";
+                        } else if (pgPositionTracker4[1].side === "center") {
+                            pgPositionTracker4[1].side = "left";
+                        } else if (pgPositionTracker4[3].side === "center") {
+                            pgPositionTracker4[3].side = "right";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea4 = 1;
+                        break;
+                    case 3:
+                        pgPositionTracker4[3].side = "center";
+                        if (pgPositionTracker4[0].side === "center") {
+                            pgPositionTracker4[0].side = "left";
+                        } else if (pgPositionTracker4[1].side === "center") {
+                            pgPositionTracker4[1].side = "left";
+                        } else if (pgPositionTracker4[2].side === "center") {
+                            pgPositionTracker4[2].side = "left";
+                        }
+
+                        //------------------------------
+                        // Most Important part of switch
+                        $scope.activeArea4 = 2;
+                        break;
+                }
+
+                domUp4P1(index);
+            };
+
             $scope.indicatorCheck = function () {
                 var aa = $scope.activeArea;
                 if (aa === -1) {
@@ -171,103 +474,41 @@
                     return 3;
                 }
             };
-
-            var _newImageUrl_g1p1 = 'Paste image url';
-
-            $scope.row1products = {
-                group1product1: {
-                    image: function (newImageUrl) {
-                        if (newImageUrl === 'g1p1') {
-                            return 'group1Product1 imageUrl'
-                        } else if (newImageUrl === 0) {
-                            _newImageUrl_g1p1 = "John West";
-                            return _newImageUrl_g1p1;
-                        }
-
-                        // if there isn't an argument this is a getter
-                        return arguments.length ? (_newImageUrl_g1p1 = newImageUrl)
-                            : _newImageUrl_g1p1;
-                    }
-                },
-                group1product2: {
-                    image: function (newImageUrl) {
-
-                    }
-                },
-                group1product3: {
-                    image: function (newImageUrl) {
-
-                    }
-                },
-                group1product4: {
-                    image: function (newImageUrl) {
-
-                    }
+            $scope.indicatorCheck2 = function () {
+                var aa = $scope.activeArea2;
+                if (aa === -1) {
+                    return 0;
+                } else if (aa === 0) {
+                    return 1;
+                } else if (aa === 1) {
+                    return 2;
+                } else if (aa === 2) {
+                    return 3;
                 }
             };
-
-            $scope.setRow1 = function (index, productGroup) {
-                // ensure for in loop happens only once
-                if (indexer < 1) {
-                    // fill the private prodGrpArr
-                    for (k in $scope.apcRow1) {
-                        // make sure 'k' is NOT being inherited
-                        if ($scope.apcRow1.hasOwnProperty(k)) {
-                            prodGrpArr[counter] = $scope.apcRow1[k];
-                            counter++;
-                        }
-                    }
-
-                    // copy into $scope.apcProducts only what is needed from prodGrpArr
-                    for (var i = 0; i < 4; i++) {
-                        $scope.apcProducts[i] = prodGrpArr[i];
-                        // get rid of keys that have a '$'
-                        var keys = Object.keys($scope.apcProducts[i]);
-                        keys = keys.filter(function (e) {
-                            return e.includes('$');
-                        });
-                        // $scope.apcProducts should be cleaned up after this loop
-                        keys.forEach(function (e) {
-                            delete $scope.apcProducts[i][e];
-                        });
-                    }
-                }
-                indexer++;
-            };
-
-            $scope.oldSetRow1 = function (index, product) {
-                switch (product.$id) {
-                    case "Group1":
-                        exposeRow1Model(product);
-                        break;
-                    case "Group2":
-                        exposeRow1Model(product);
-                        break;
-                    case "Group3":
-                        exposeRow1Model(product);
-                        break;
-                    case "Group4":
-                        exposeRow1Model(product);
-                        break;
-                    default:
-                        console.log("ERROR: parent index out of range!")
+            $scope.indicatorCheck3 = function () {
+                var aa = $scope.activeArea3;
+                if (aa === -1) {
+                    return 0;
+                } else if (aa === 0) {
+                    return 1;
+                } else if (aa === 1) {
+                    return 2;
+                } else if (aa === 2) {
+                    return 3;
                 }
             };
-
-            var exposeRow1Model = function (productGroup) {
-                var prodGrpArr = [], counter = 0, k;
-                for (k in productGroup) {
-                    // make sure 'k' is NOT being inherited
-                    if (productGroup.hasOwnProperty(k)) {
-                        prodGrpArr[counter] = productGroup[k];
-                        counter++;
-                    }
+            $scope.indicatorCheck4 = function () {
+                var aa = $scope.activeArea4;
+                if (aa === -1) {
+                    return 0;
+                } else if (aa === 0) {
+                    return 1;
+                } else if (aa === 1) {
+                    return 2;
+                } else if (aa === 2) {
+                    return 3;
                 }
-                console.log(prodGrpArr);
-            };
-
-            $scope.bindToProductsModel = function (index) {
-                return $scope.g1p1 = "a cool binding";
             };
 
             $scope.getCategories = "categories from product.slider.edit.ctrl.js file";
