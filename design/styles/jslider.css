@@ -1,0 +1,85 @@
+.j-slider-indicators {
+  position: absolute;
+  top: 424px;
+  left: 414px; }
+  .j-slider-indicators .j-circle {
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer; }
+  .j-slider-indicators .jslide-active {
+    background-color: #555555; }
+  .j-slider-indicators .jslide-inactive {
+    background-color: #9a9a9a; }
+
+#j-product-slider {
+  position: relative;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  min-height: 500px; }
+  #j-product-slider .initial-product-group {
+    position: absolute; }
+  #j-product-slider .product-group {
+    position: absolute;
+    left: 1600px; }
+  #j-product-slider .product {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px; }
+  #j-product-slider .product:last-child {
+    margin-right: 0; }
+  #j-product-slider .active, #j-product-slider .inactive {
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    transition: left 0.5s linear; }
+  #j-product-slider .initial-product-group.active,
+  #j-product-slider .product-group.active {
+    left: 0 !important; }
+  #j-product-slider .product-group.inactive {
+    left: 2000px; }
+  #j-product-slider .product-group.increment-left.inactive {
+    left: -2000px; }
+  #j-product-slider .initial-product-group.inactive {
+    left: -2000px; }
+
+#j-product-slider-edit {
+  position: relative;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  min-height: 500px; }
+  #j-product-slider-edit .initial-product-group {
+    position: absolute; }
+  #j-product-slider-edit .product-group {
+    position: absolute;
+    left: 1600px; }
+  #j-product-slider-edit .product {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px; }
+  #j-product-slider-edit .product:last-child {
+    margin-right: 0; }
+  #j-product-slider-edit .active, #j-product-slider-edit .inactive {
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    transition: left 0.5s linear; }
+  #j-product-slider-edit .initial-product-group.active,
+  #j-product-slider-edit .product-group.active {
+    left: 0 !important; }
+  #j-product-slider-edit .product-group.inactive {
+    left: 2000px; }
+  #j-product-slider-edit .product-group.increment-left.inactive {
+    left: -2000px; }
+  #j-product-slider-edit .initial-product-group.inactive {
+    left: -2000px; }
+
+.j-edit {
+  cursor: crosshair; }
+
+.form-group {
+  margin-top: 10px; }

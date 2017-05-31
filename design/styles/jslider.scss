@@ -1,0 +1,140 @@
+$j-dark-grey: #555555;
+$j-light-grey: #9a9a9a;
+$aussie-blue: #0D2A81;
+$aussie-red: #ba0000;
+
+.j-slider-indicators {
+    position: absolute;
+    top: 424px;
+    left: 414px;
+    .j-circle {
+        border-radius: 50%;
+        min-height: 20px;
+        min-width: 20px;
+        display: inline-block;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+
+    .jslide-active {
+        background-color: $j-dark-grey;
+    }
+
+    .jslide-inactive {
+        background-color: $j-light-grey;
+    }
+}
+
+#j-product-slider {
+    position: relative;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+    min-height: 500px;
+
+    .initial-product-group {
+        position: absolute;
+    }
+
+    .product-group {
+        position: absolute;
+        left: 1600px;
+    }
+
+    .product {
+        position: relative;
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    .product:last-child {
+        margin-right: 0;
+    }
+
+    .active, .inactive {
+        -webkit-transition: left 0.5s linear;
+        -moz-transition: left 0.5s linear;
+        -o-transition: left 0.5s linear;
+        transition: left 0.5s linear;
+    }
+
+    //-- slider anims:
+    .initial-product-group.active,
+    .product-group.active {
+        left: 0 !important;
+    }
+
+    .product-group.inactive {
+        left: 2000px;
+    }
+
+    .product-group.increment-left.inactive {
+        left: -2000px;
+    }
+    //
+    .initial-product-group.inactive {
+        left: -2000px
+    }
+}
+
+#j-product-slider-edit {
+    position: relative;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+    min-height: 500px;
+
+    .initial-product-group {
+        position: absolute;
+    }
+
+    .product-group {
+        position: absolute;
+        left: 1600px;
+    }
+
+    .product {
+        position: relative;
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    .product:last-child {
+        margin-right: 0;
+    }
+
+    .active, .inactive {
+        -webkit-transition: left 0.5s linear;
+        -moz-transition: left 0.5s linear;
+        -o-transition: left 0.5s linear;
+        transition: left 0.5s linear;
+    }
+
+    //-- slider anims:
+    .initial-product-group.active,
+    .product-group.active {
+        left: 0 !important;
+    }
+
+    .product-group.inactive {
+        left: 2000px;
+    }
+
+    .product-group.increment-left.inactive {
+        left: -2000px;
+    }
+    //
+    .initial-product-group.inactive {
+        left: -2000px
+    }
+}
+
+.j-edit {
+    cursor: crosshair;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
+
