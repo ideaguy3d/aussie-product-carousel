@@ -21,7 +21,7 @@
 
 				<!-- The LOOP begins here: -->
 				<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow1Group1">
-					<product-card-edit product="p"></product-card-edit>
+					<product-card-edit product="p" apc-prod-row="1"></product-card-edit>
 				</div>
 			</div>
 
@@ -59,7 +59,6 @@
 						</div>
 					</div>
 				</section>
-
 			</div>
 
 			<!---------------------------------------------------->
@@ -87,12 +86,11 @@
 				<h1>
 					<small>Product Group</small>
 					-<strong>{{ activeArea2 + 2 }}</strong>
-					<!--| group1product1.image() = <i ng-bind="row1products.group1product1.image()"></i>-->
 				</h1>
 
 				<!-- The LOOP begins here: -->
 				<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow2Group1">
-					<product-card-edit product="p"></product-card-edit>
+					<product-card-edit product="p" apc-prod-row="2"></product-card-edit>
 				</div>
 			</div>
 
@@ -162,7 +160,7 @@
 
 				<!-- The LOOP begins here: -->
 				<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow3Group1">
-					<product-card-edit product="p"></product-card-edit>
+					<product-card-edit product="p" apc-prod-row="3"></product-card-edit>
 				</div>
 			</div>
 
@@ -226,21 +224,21 @@
 			     ng-class="{'inactive': (activeArea4 !== -1), 'active': (activeArea4 === -1)}">
 				<h1>
 					<small>Product Group</small>
-					- <strong>{{ activeArea4 + 2 }}</strong>
+					-<strong>{{ activeArea4 + 2 }}</strong>
 				</h1>
 
 				<!-- The LOOP begins here: -->
 				<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow4Group1">
-					<product-card-edit product="p"></product-card-edit>
+					<product-card-edit product="p" apc-prod-row="4"></product-card-edit>
 				</div>
 			</div>
 
 			<!-- incremented product group, '.apc-row4' class is being used for JavaScript  -->
 			<div class="apc-row4 product-group {{'product-group'+$index}}" ng-repeat="e in repetitionAmount"
-			     ng-class="{ 'active': ($index === activeArea4), 'inactive': ($index !== activeArea4) }">
+			        ng-class="{ 'active': ($index === activeArea4), 'inactive': ($index !== activeArea4) }">
 				<h1>
 					<small>Product Group</small>
-					-<strong>{{ activeArea4 + 2 }}</strong>
+					- <strong>{{ activeArea4 + 2 }}</strong>
 				</h1>
 
 				<!-- ngSwitch directive section begins: -->
@@ -248,7 +246,7 @@
 					<!-- Row 1 Group 2 Products -->
 					<div ng-switch-when="0">
 						<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow4Group2">
-							<product-card-incremented-edit product="p"
+							<product-card-incremented-edit product="p" apc-prod-row="4"
 							                               active-area="activeArea4"></product-card-incremented-edit>
 						</div>
 					</div>
@@ -256,7 +254,7 @@
 					<!-- Row 1 Group 3 Products -->
 					<div ng-switch-when="1">
 						<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow4Group3">
-							<product-card-incremented-edit product="p"
+							<product-card-incremented-edit product="p" apc-prod-row="4"
 							                               active-area="activeArea4"></product-card-incremented-edit>
 						</div>
 					</div>
@@ -264,7 +262,7 @@
 					<!-- Row 1 Group 4 Products -->
 					<div ng-switch-when="2">
 						<div class="col-sm-3 col-md-3" ng-repeat="p in apcRow4Group4">
-							<product-card-incremented-edit product="p"
+							<product-card-incremented-edit product="p" apc-prod-row="4"
 							                               active-area="activeArea4"></product-card-incremented-edit>
 						</div>
 					</div>

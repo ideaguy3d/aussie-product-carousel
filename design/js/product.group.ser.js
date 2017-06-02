@@ -59,6 +59,8 @@
                 Row4Group2: $firebaseArray(ref_row4_group2),
                 Row4Group3: $firebaseArray(ref_row4_group3),
                 Row4Group4: $firebaseArray(ref_row4_group4),
+
+                // OLD STUFF
                 jcategories: $firebaseArray(ref_jcategories),
                 ProductsMessagesArray: function () {
                     return $firebaseArray(ref_messages);

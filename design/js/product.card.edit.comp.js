@@ -8,7 +8,8 @@
 
     app.component(componentId, {
         bindings: {
-            product: '='
+            product: '=',
+            apcProdRow: '@'
         },
         templateUrl: 'design/js/product.card.edit.temp.html',
         controller: ['jProductGroup1Data', ProductCardEditCtrl]
@@ -39,7 +40,22 @@
             vm.product.$id = vm.productId ? vm.productId : vm.product.productId;
 
             if (vm.productImgUrl || vm.productTitle || vm.productId || vm.productPrice) {
-                jProductGroup1Data.Row1Group1.$save(vm.product);
+                switch (vm.apcProdRow) {
+                    case "1":
+                        jProductGroup1Data.Row1Group1.$save(vm.product);
+                        break;
+                    case "2":
+                        jProductGroup1Data.Row2Group1.$save(vm.product);
+                        break;
+                    case "3":
+                        jProductGroup1Data.Row3Group1.$save(vm.product);
+                        break;
+                    case "4":
+                        jProductGroup1Data.Row4Group1.$save(vm.product);
+                        break;
+                    default:
+                        console.log("ERROR with initial product group");
+                }
             }
         };
 
